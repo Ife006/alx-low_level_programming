@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- * Return: Always success if 0
+ * Return: Always 0
  */
 int main(void)
 {
@@ -12,7 +12,7 @@ int main(void)
 	lower = 'a';
 	while (lower <= 'z')
 	{
-	uytgcl7tcl7tvl7tvl7l987ybl8y8yf	putchar(lower);
+		putchar(lower);
 		lower++;
 	}
 
