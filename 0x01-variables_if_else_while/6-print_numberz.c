@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- * Return; Alwasys success at 0
+ * Return: Always success at 0
  */
 int main(void)
 {
