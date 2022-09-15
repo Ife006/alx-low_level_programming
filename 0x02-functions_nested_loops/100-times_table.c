@@ -37,7 +37,7 @@ void prints_times_table(int n)
 					{
 						int number;
 
-						numb = prod / 10;
+						num = prod / 10;
 						_putchar((number / 10) + '0');
 						_putchar((number % 10) + '0');
 					}
@@ -49,7 +49,7 @@ void prints_times_table(int n)
 					_putchar((prod / 10) + '0');
 				}
 
-				_puchar((prod % 10) + '0');
+				_putchar((prod % 10) + '0');
 			}
 			_putchar('\n');
 		}
