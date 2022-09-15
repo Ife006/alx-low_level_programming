@@ -33,7 +33,7 @@ void print_times_table(int n)
 				}
 				else
 				{
-					if (prod >= n)
+					if (prod >= 100)
 					{
 						int number;
 
