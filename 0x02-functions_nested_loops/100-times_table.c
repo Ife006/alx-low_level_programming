@@ -10,7 +10,7 @@ void prints_times_table(int n)
 	int mult;
 	int prod;
 
-	if (num > 15 || n < 0)
+	if (n > 15 || n < 0)
 	{
 		_putchar(' ');
 	}
