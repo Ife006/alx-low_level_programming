@@ -4,7 +4,7 @@
  * print_times_table - prints n times tables starting from 0
  * @n: the given number
  */
-void prints_times_table(int n)
+void print_times_table(int n)
 {
 	int num;
 	int mult;
