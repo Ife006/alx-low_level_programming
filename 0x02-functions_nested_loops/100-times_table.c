@@ -12,17 +12,17 @@ void prints_times_table(int n)
 
 	if (num > 15 || n < 0)
 	{
-		_putcahr(' ');
+		_putchar(' ');
 	}
 	else
 	{
 		for (num = 0; num <= n; num++)
 		{
-			_putchar('0);
+			_putchar('0');
 
-			for (mult = 0; mult <= n; mult ++)
+			for (mult = 1; mult <= n; mult ++)
 			{
-				_putchar(', ');
+				_putchar(',');
 				_putchar(' ');
 
 				prod = num * mult;
