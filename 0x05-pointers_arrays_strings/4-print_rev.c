@@ -7,7 +7,7 @@
  */
 void print_rev(char *s)
 {
-	int count = o;
+	int count = 0;
 
 	while (s[count])
 	{
@@ -18,7 +18,7 @@ void print_rev(char *s)
 
 	for (; count >= 0; count--)
 	{
-		_putchcar(s[count]);
+		_putchar(s[count]);
 	}
 	_putchar('\n');
 }
