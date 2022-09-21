@@ -12,7 +12,7 @@ char *leet(char *s)
 
 	while (s[i])
 	{
-		for (j = 0; j < 7; j++)
+		for (j = 0; j <= 7; j++)
 		{
 			if ((s[i] == letters[j]) || (s[i] - 32 == letters[j]))
 				s[i] = j + 0;
