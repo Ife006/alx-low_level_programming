@@ -6,7 +6,7 @@
  * @src: source to copy to
  * Return: a pointer
  */
-char *_strcpy(char *dest, const char *src)
+char *_strcpy(char *dest, char *src)
 {
 	int index = 0;
 
