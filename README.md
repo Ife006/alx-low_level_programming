@@ -1,1 +1,1 @@
-this shows how to use pointers, arrays and strings
+working with more mallocs and free
