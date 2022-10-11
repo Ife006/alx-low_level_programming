@@ -1,76 +1,87 @@
 #include <stdlib.h>
 #include "dog.h"
 
-int _strLen(char *str);
-void fillMem(char *str, int strLen, char *dest);
+
+int _strlen(char *str);
+char *_strcpy(char *dest, char *src);
+dog_t *new_dog(char *name, float age, char *owner);
+
 
 /**
- * new_dog - Creates a new dog
+ * _strlen - Returns the length of a string.
+ * @str: String to be measure.
  *
- * @name: Name of dog
- *
- * @age: Age of dog
- *
- * @owner: Owner of dog
- *
- * Return: Pointer to the newly created dog (SUCCESS) or
- * NULL if insufficient memory was available (FAILURE)
+ * Return: The length of a string.
  */
-
-dog_t *new_dog(char *name, float age, char *owner)
+int _strlen(char *str)
 {
-	dog_t *n_dog;
-	int nameLen, ownerLen;
+	int len = 0;
 
-	n_dog = malloc(sizeof(dog_t));
+	while (*str++)
+		len++;
 
-	if (n_dog == NULL)
-		return (NULL);
-
-	nameLen = _strLen(name);
-	n_dog->name = malloc(sizeof(char) * nameLen + 1);
-
-	if (n_dog->name == NULL)
-	{
-		free(n_dog);
-		return (NULL);
-	}
-
-	fillMem(name, nameLen, n_dog->name);
-
-	ownerLen = _strLen(owner);
-	n_dog->owner = malloc(sizeof(char) * ownerLen + 1);
-
-	if (n_dog->owner == NULL)
-	{
-		free(n_dog);
-		free(n_dog->name);
-		return (NULL);
-	}
-
-	fillMem(owner, ownerLen, n_dog->owner);
-
-	n_dog->age = age;
-
-	return (n_dog);
+	return (len);
 }
 
 /**
- * fillMem - Copy string literal to allocated memory
+ * _strcpy - Copies a string pointed to a src to
+ * a buffer pointed to a dest.
+ * @dest: Buffer storing the string copy.
+ * @src: Source string.
  *
- * @str: String literal
- *
- * @strLen: @str length
- *
- * @dest: The allocated memory
+ * Return: A pointer to dest.
  */
-
-void fillMem(char *str, int strLen, char *dest)
+char *_strcpy(char *dest, char *src)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0; i < strLen; i++)
-		dest[i] = str[i];
+	for (i = 0; src[i]; i++)
+		dest[i] = src[i];
 
 	dest[i] = '\0';
+
+	return (dest);
+}
+
+
+/**
+ * new_dog - Creates a new dog.
+ * @name: Name of dog.
+ * @age: Age of dog.
+ * @owner: Owner of dog.
+ * Return: The new struct dog.
+ */
+dog_t *new_dog(char *name, float age, char *owner)
+{
+	dog_t *bingo;
+
+	if (name == NULL || age < 0 || owner == NULL)
+		return (NULL);
+
+	bingo = malloc(sizeof(dog_t));
+	if (bingo == NULL)
+		return (NULL);
+
+	bingo->name = malloc(sizeof(char) * (_strlen(name) + 1));
+
+	if (bingo->name == NULL)
+	{
+		free(bingo);
+		return (NULL);
+	}
+
+	bingo->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
+
+	if (bingo->owner == NULL)
+	{
+		free(bingo->name);
+		free(bingo);
+		return (NULL);
+	}
+
+	bingo->name = _strcpy(bingo->name, name);
+	bingo->age = age;
+	bingo->owner = _strcpy(bingo->owner, owner);
+
+	return (bingo);
 }
