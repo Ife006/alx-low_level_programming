@@ -5,7 +5,7 @@
  * @l: the linked list_t list
  * Return: the number of elements in l
  */
-size_t list_len(const list_t *h)
+size_t list_len(const list_t *l)
 {
 	size_t lmnts = 0;
 
